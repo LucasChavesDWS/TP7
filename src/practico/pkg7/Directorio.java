@@ -2,6 +2,7 @@
 package practico.pkg7;
 
 import java.util.HashMap;
+import java.util.List;
 
 
 public class Directorio{
@@ -12,15 +13,12 @@ public class Directorio{
         clientes.put(c.getTelefonoP(), c);
     }
     
-    public void buscarCliente(long n){
-        
-        for (Long key : clientes.keySet()) {
-            if (clientes.containsKey(n)){
-                clientes.get(n).getCliente();
-            }
-            else{System.out.println("No existe el cliente");
-            }
+    public Cliente buscarCliente(long n){
+        if (clientes.containsKey(n))
+        {
+            return clientes.get(n);
         }
+        return null;
     }
     
     public void buscarTelefono(String Apellido){
@@ -31,13 +29,15 @@ public class Directorio{
         }
     }
     
-    public void buscarClientes (String Ciudad){
-        System.out.println("Clientes que viven en " + Ciudad);
+    public List<Cliente> buscarClientes (String Ciudad){
+        List <Cliente> Cc = null;
+        
         for (long k : clientes.keySet())
         {
             if(clientes.get(k).getCiudad().equals(Ciudad))
-                clientes.get(k).getNombreCompleto();
+                Cc.add(clientes.get(k));
         }
+        return Cc;
     }
     
     public void borrarCliente(long dni){

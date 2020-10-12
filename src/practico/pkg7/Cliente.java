@@ -1,6 +1,8 @@
 
 package practico.pkg7;
 
+import java.util.List;
+
 
 public class Cliente {
     private long dni;
@@ -8,6 +10,7 @@ public class Cliente {
     private String nombre;
     private long [] numeros;
     private String ciudad;
+    private List [] ClientesC ;
     
 
     public Cliente(long dni, String apellido, String nombre, long numeros, String ciudad) {
